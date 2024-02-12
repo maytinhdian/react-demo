@@ -1,9 +1,16 @@
+import { useState } from "react";
 import "./App.css";
+import Header from "./Components/Header/Header";
+import EditPage from "./Components/Edit/EditPage";
 
 function App() {
-  return <div className="app">
-    Welcome
-  </div>;
+  const [isEdit, setEdit] = useState(false);
+
+  return (
+    <>
+      <div className="App">{isEdit ? <EditPage /> : <Header setEdit={setEdit} />}</div>
+    </>
+  );
 }
 
 export default App;
